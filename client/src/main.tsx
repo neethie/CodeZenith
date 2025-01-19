@@ -15,6 +15,7 @@ createRoot(document.getElementById("root")!).render(
                 <Routes>
                     <Route index element={<MainView />} />
                     <Route path="/code/:id" element={<CodeView />} />
+                    <Route path="*" element={<MainView />} />
                 </Routes>
             </BrowserRouter>
         </QueryClientProvider>

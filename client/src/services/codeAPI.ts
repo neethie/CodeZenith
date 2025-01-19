@@ -8,6 +8,7 @@ export class CodeAPI {
             const { data } = await api.post("/code/create", codeData);
             return data;
         } catch (error) {
+            console.log(error);
             if (isAxiosError(error)) throw new Error(error.message);
         }
     };
@@ -17,6 +18,7 @@ export class CodeAPI {
             const { data } = await api.get(`/code/${id}`);
             return data;
         } catch (error) {
+            console.log(error);
             if (isAxiosError(error)) throw new Error(error.message);
         }
     };

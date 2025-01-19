@@ -13,7 +13,7 @@ export default function CodeView() {
 
     const { data, isLoading, isError } = useQuery({
         queryKey: ["getCode", id],
-        queryFn: () => CodeAPI.getById(id!.toString()),
+        queryFn: () => CodeAPI.getById(id!),
     });
 
     if (isLoading) return;

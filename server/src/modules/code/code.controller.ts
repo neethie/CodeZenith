@@ -6,7 +6,7 @@ export class CodeController {
         try {
             const { code, languageId } = req.body;
             const newCode = await Code.create({ code, languageId });
-            res.json(newCode.id);
+            res.send(newCode.id);
         } catch (error) {
             console.log(error);
         }
@@ -15,7 +15,7 @@ export class CodeController {
     static getAll = async (req: Request, res: Response) => {
         try {
             const codes = await Code.findAll();
-            res.json(codes);
+            res.send(codes);
         } catch (error) {
             console.log(error);
         }
@@ -25,7 +25,7 @@ export class CodeController {
         try {
             const { id } = req.params;
             const code = await Code.findByPk(id);
-            res.json(code);
+            res.send(code);
         } catch (error) {
             console.log(error);
         }
