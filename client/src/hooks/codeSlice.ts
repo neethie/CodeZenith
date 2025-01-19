@@ -5,6 +5,9 @@ export type CodeSlice = {
     code: string | undefined;
     language: number;
 
+    created: boolean;
+    setCreated: (created: boolean) => void;
+
     setCode: (code: string | undefined) => void;
     setLanguage: (languageId: number) => void;
 };
@@ -21,5 +24,10 @@ export const useCodeSlice: StateCreator<CodeSlice, [], [], CodeSlice> = (
 
     setLanguage: (language) => {
         set({ language });
+    },
+
+    created: false,
+    setCreated: (created) => {
+        set({ created });
     },
 });
